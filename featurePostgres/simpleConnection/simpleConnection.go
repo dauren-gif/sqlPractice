@@ -3,6 +3,7 @@ package simpleconnection
 import (
 	"context"
 	"fmt"
+	"time"
 
 	"github.com/jackc/pgx/v5"
 )
