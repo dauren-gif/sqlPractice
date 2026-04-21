@@ -12,4 +12,3 @@
 - JOIN (INNER, LEFT, RIGHT)
 - GROUP BY, HAVING
 - INSERT, UPDATE, DELETE
-- Агрегатные функции (COUNT, SUM, AVG)
