@@ -1,22 +1,32 @@
 package main
 
 import (
-	"context"
-	simpleconnection "sqlLesson/featurePostgres/simpleConnection"
-	simplesql "sqlLesson/featurePostgres/simpleSql"
+	"fmt"
+	httpserver "sqlLesson/http_server"
 )
 
 func main() {
-	ctx := context.Background()
 
-	conn, err := simpleconnection.CreateConnect(ctx)
-	if err != nil {
-		panic(err)
+	// if _, err := os.Create("out/newfile.txt"); err != nil {
+	// 	panic(err)
+	// }
+
+	fmt.Println("сервер запущен")
+
+	if err := httpserver.StartHttpServer(); err != nil {
+		fmt.Println("ошибка запуска сервера")
 	}
 
-	if err := simplesql.CreateTable(ctx, conn); err != nil {
-		panic(err)
-	}
+	// ctx := context.Background()
+
+	// conn, err := simpleconnection.CreateConnect(ctx)
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// if err := simplesql.CreateTable(ctx, conn); err != nil {
+	// 	panic(err)
+	// }
 
 	// if err := simplesql.InsertRow(
 	// 	ctx,
